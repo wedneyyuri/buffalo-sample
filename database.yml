@@ -1,36 +1,36 @@
 ---
 development:
   dialect: "mysql"
-  database: "sample_development"
+  database: "buffalosample"
   host: "localhost"
   port: "3306"
-  user: "root"
-  password: "root"
+  user: "buffalosample"
+  password: "buffalosample"
 
 test:
   dialect: "mysql"
   #
   # You can use a single URL string for the same configuration:
   #
-  #url: "mysql://root:root@(localhost:3306)/sample_test?parseTime=true&multiStatements=true&readTimeout=3s"
+  #url: "mysql://root:root@(localhost:3306)/backend_test?parseTime=true&multiStatements=true&readTimeout=3s"
   #
   # Note that if you use `url`, other configurations are silently ignored.
   # In this case, the URL must contain all required connection parameters.
   #
-  database: "sample_test"
+  database: "buffalosample_test"
   host: "localhost"
-  port: "3306"
-  user: "root"
-  password: "root"
+  port: "3307"
+  user: "buffalosample"
+  password: "buffalosample"
 
 production:
   #
   # You can also use environmental variables to override values in this config.
   #
-  #url: {{envOr "DATABASE_URL" "mysql://root:root@(localhost:3306)/sample_production?parseTime=true&multiStatements=true&readTimeout=3s"}}
+  #url: {{envOr "DATABASE_URL" "mysql://root:root@(localhost:3306)/backend_production?parseTime=true&multiStatements=true&readTimeout=3s"}}
   #
   dialect: "mysql"
-  database: "sample_production"
+  database: "backend_production"
   host: {{envOr "DATABASE_HOST" "localhost"}}
   port: {{envOr "DATABASE_PORT" "3306"}}
   user: {{envOr "DATABASE_USER" "root"}}

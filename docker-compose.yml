@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  db_development:
+    container_name: buffalosample_mysql
+    image: mysql
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: buffalosample
+      MYSQL_USER: buffalosample
+      MYSQL_PASSWORD: buffalosample
+      MYSQL_ROOT_PASSWORD: buffalosample
+    volumes:
+      - ./db/development:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+  db_test:
+    container_name: buffalosample_mysql_test
+    image: mysql
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: buffalosample_test
+      MYSQL_USER: buffalosample
+      MYSQL_PASSWORD: buffalosample
+      MYSQL_ROOT_PASSWORD: buffalosample
+    volumes:
+      - ./db/test:/var/lib/mysql
+    ports:
+      - 3307:3306
